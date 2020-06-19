@@ -1,26 +1,77 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useImperativeHandle } from "react";
+import "./App.css";
+import { Form, Button } from "react-bootstrap";
 
-function App() {
+const App = () => {
+  const [selected, setSelected] = useState();
+
+  function handleCheck(event) {
+    console.log(event);
+    console.log(event.target);
+    setSelected(event.target.id);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form>
+        <Form.Group controlId="exampleForm.ControlTextarea1">
+          <Form.Label>
+            Enter your text and choose from one of the options
+          </Form.Label>
+          <Form.Control as="textarea" rows="3"></Form.Control>
+        </Form.Group>
+        <Form.Check
+          inline
+          label="Sentence case"
+          id="1"
+          name="textMode"
+          onClick={handleCheck}
+        />
+        <Form.Check
+          inline
+          label="lower case"
+          id="2"
+          name="textMode"
+          onClick={handleCheck}
+        />
+        <Form.Check
+          inline
+          label="UPPER CASE"
+          id="3"
+          name="textMode"
+          onClick={handleCheck}
+        />
+        <Form.Check
+          inline
+          label="Capitalized Case"
+          id="4"
+          name="textMode"
+          onClick={handleCheck}
+        />
+        <Form.Check
+          inline
+          label="aLtErNaTiNg cAsE"
+          id="5"
+          name="textMode"
+          onClick={handleCheck}
+        />
+        <Form.Check
+          inline
+          label="Title Case"
+          id="6"
+          name="textMode"
+          onClick={handleCheck}
+        />
+        <Form.Check
+          inline
+          label="InVeRsE CaSe"
+          id="7"
+          name="textMode"
+          onClick={handleCheck}
+        />
+      </Form>
     </div>
   );
-}
+};
 
 export default App;
