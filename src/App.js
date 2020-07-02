@@ -18,7 +18,8 @@ const App = () => {
 
   useEffect(() => {
     setConvertedText(originalText);
-  }, [originalText]);
+    console.log("te");
+  }, [originalText, selected]);
 
   return (
     <div className="wrapper">
