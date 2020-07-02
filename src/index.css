@@ -1,3 +1,5 @@
+@import-normalize;
+
 body {
   display: flex;
   align-items: center;
@@ -18,19 +20,39 @@ code {
 
 .wrapper {
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 
 input[type="textarea"] {
   margin-bottom: 10px;
 }
+
 input[type="radio"] {
   margin-right: 10px;
+}
+
+label {
   margin-left: 10px;
+  margin-right: 5px;
 }
 
 h1 {
   display: flex;
-  align-self: flex-start;
+}
+
+svg {
+  width: 80px;
+  height: 80px;
+  align-self: center;
+}
+
+form {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  background-color: lightsteelblue;
+  border: 1px solid black;
+  border-top: 0px;
+  display: flex;
+  align-items: center;
 }
