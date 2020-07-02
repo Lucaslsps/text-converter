@@ -2,6 +2,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -13,4 +14,23 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input[type="textarea"] {
+  margin-bottom: 10px;
+}
+input[type="radio"] {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+h1 {
+  display: flex;
+  align-self: flex-start;
 }
