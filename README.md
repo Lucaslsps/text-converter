@@ -9,3 +9,5 @@ Created with React. It converts the input text to the following formats:
 - aLtErNaTiNg cAsE
 - Title Case
 - InVeRsE CaSe
+
+Running on https://text-converter.netlify.app/
