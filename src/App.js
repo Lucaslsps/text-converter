@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
-import "./App.css";
 import { useEffect } from "react";
+import "./App.css";
+import Footer from "./reusable/footer";
 
 const App = () => {
   const [selected, setSelected] = useState();
@@ -68,12 +69,15 @@ const App = () => {
     auxText = auxText + ".";
     return auxText;
   }
+
   function lowerCase(text) {
     return text.toLowerCase();
   }
+
   function upperCase(text) {
     return text.toUpperCase();
   }
+
   function capitalizedCase(text) {}
   function alternatingCase(text) {
     let auxText = text.toUpperCase().split("");
@@ -83,6 +87,7 @@ const App = () => {
     auxText = auxText.join("");
     return auxText;
   }
+
   function titleCase(text) {
     let auxText = text.toLowerCase().split(" ");
     for (let i = 0; i < auxText.length; i++) {
@@ -91,6 +96,7 @@ const App = () => {
     auxText = auxText.join(" ");
     return auxText;
   }
+
   function inverseCase(text) {
     let auxText = text.split("");
     for (let i = 0; i < auxText.length; i++) {
@@ -115,20 +121,20 @@ const App = () => {
       />
 
       <form>
-        <label htmlFor="1">Sentence case</label>
         <input type="radio" id="1" name="textMode" onClick={handleCheck} />
-        <label htmlFor="2">lower case</label>
+        <label htmlFor="1">Sentence case</label>
         <input type="radio" id="2" name="textMode" onClick={handleCheck} />
-        <label htmlFor="3">UPPER CASE</label>
+        <label htmlFor="2">lower case</label>
         <input type="radio" id="3" name="textMode" onClick={handleCheck} />
-        <label htmlFor="4">Capitalized Case</label>{" "}
-        <input type="radio" id="4" name="textMode" onClick={handleCheck} />
-        <label htmlFor="5">aLtErNaTiNg cAsE</label>
+        <label htmlFor="3">UPPER CASE</label>
+        {/*         <input type="radio" id="4" name="textMode" onClick={handleCheck} />
+        <label htmlFor="4">Capitalized Case</label>{" "} */}
         <input type="radio" id="5" name="textMode" onClick={handleCheck} />
-        <label htmlFor="6">Title Case</label>
+        <label htmlFor="5">aLtErNaTiNg cAsE</label>
         <input type="radio" id="6" name="textMode" onClick={handleCheck} />
-        <label htmlFor="7">InVeRsE CaSe</label>
+        <label htmlFor="6">Title Case</label>
         <input type="radio" id="7" name="textMode" onClick={handleCheck} />
+        <label htmlFor="7">iNVERSE cASE</label>
       </form>
 
       <FaArrowDown />
