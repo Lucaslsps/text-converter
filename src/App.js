@@ -92,9 +92,13 @@ const App = () => {
     return auxText;
   }
   function inverseCase(text) {
-    let auxText = text.toLowerCase().split("");
-    for (let i = 0; i < auxText.length; i += 2) {
-      auxText[i] = auxText[i].toUpperCase();
+    let auxText = text.split("");
+    for (let i = 0; i < auxText.length; i++) {
+      if (auxText[i] === auxText[i].toUpperCase()) {
+        auxText[i] = auxText[i].toLowerCase();
+      } else {
+        auxText[i] = auxText[i].toUpperCase();
+      }
     }
     auxText = auxText.join("");
     return auxText;
