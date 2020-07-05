@@ -9,7 +9,7 @@ const App = () => {
   const [convertedText, setConvertedText] = useState("");
 
   function handleCheck(event) {
-    setSelected(event.target.id);
+    setSelected(Number(event.target.id));
   }
 
   function handleOriginalText(event) {
@@ -17,9 +17,88 @@ const App = () => {
   }
 
   useEffect(() => {
-    setConvertedText(originalText);
-    console.log("te");
+    let aux = "";
+    switch (selected) {
+      case 1:
+        aux = sentenceCase(originalText);
+        setConvertedText(aux);
+        break;
+      case 2:
+        aux = lowerCase(originalText);
+        setConvertedText(aux);
+        break;
+      case 3:
+        aux = upperCase(originalText);
+        setConvertedText(aux);
+        break;
+      case 4:
+        aux = capitalizedCase(originalText);
+        setConvertedText(aux);
+        break;
+      case 5:
+        aux = alternatingCase(originalText);
+        setConvertedText(aux);
+        break;
+      case 6:
+        aux = titleCase(originalText);
+        setConvertedText(aux);
+        break;
+      case 7:
+        aux = inverseCase(originalText);
+        setConvertedText(aux);
+        break;
+      default:
+        console.log("Invalido");
+    }
   }, [originalText, selected]);
+
+  function sentenceCase(text) {
+    let auxText = text.split(".");
+    auxText = auxText.filter((chr) => {
+      return chr !== "" && chr !== " ";
+    });
+
+    for (let i = 0; i < auxText.length; i++) {
+      auxText[i] = auxText[i].trim();
+      console.log(auxText[i]);
+      if (auxText[i].length === 0) continue;
+      auxText[i] = auxText[i][0].toUpperCase() + auxText[i].slice(1);
+    }
+    auxText = auxText.join(". ");
+    auxText = auxText + ".";
+    return auxText;
+  }
+  function lowerCase(text) {
+    return text.toLowerCase();
+  }
+  function upperCase(text) {
+    return text.toUpperCase();
+  }
+  function capitalizedCase(text) {}
+  function alternatingCase(text) {
+    let auxText = text.toUpperCase().split("");
+    for (let i = 0; i < auxText.length; i += 2) {
+      auxText[i] = auxText[i].toLowerCase();
+    }
+    auxText = auxText.join("");
+    return auxText;
+  }
+  function titleCase(text) {
+    let auxText = text.toLowerCase().split(" ");
+    for (let i = 0; i < auxText.length; i++) {
+      auxText[i] = auxText[i][0].toUpperCase() + auxText[i].slice(1);
+    }
+    auxText = auxText.join(" ");
+    return auxText;
+  }
+  function inverseCase(text) {
+    let auxText = text.toLowerCase().split("");
+    for (let i = 0; i < auxText.length; i += 2) {
+      auxText[i] = auxText[i].toUpperCase();
+    }
+    auxText = auxText.join("");
+    return auxText;
+  }
 
   return (
     <div className="wrapper">
