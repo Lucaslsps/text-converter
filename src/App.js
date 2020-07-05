@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import { useEffect } from "react";
 import "./App.css";
-import Footer from "./reusable/footer";
 
 const App = () => {
   const [selected, setSelected] = useState();
